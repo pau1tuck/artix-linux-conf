@@ -1,1 +1,1 @@
-# Paul's Arch Linux scripts
+# Paul's Arch Linux config files
