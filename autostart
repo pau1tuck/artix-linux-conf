@@ -1,0 +1,68 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+
+# If you want to use GNOME config tools...
+#
+#if test -x /usr/lib/openbox/gnome-settings-daemon >/dev/null; then
+#  /usr/lib/openbox/gnome-settings-daemon &
+#elif which gnome-settings-daemon >/dev/null 2>&1; then
+#  gnome-settings-daemon &
+#fi
+
+# If you want to use XFCE config tools...
+#
+#xfce-mcs-manager &
+
+# Set wallpaper
+#feh --bg-fill /home/paul/img/bg/0PuSwi8.png
+nitrogen --restore &
+
+#sudo xbacklight -set 50 &
+
+/usr/bin/synclient TouchpadOff=0 &
+
+# Xorg keyboard map and disabled caps lock
+setxkbmap us &
+setxkbmap -option caps:none &
+numlockx &
+
+# Onscreen system stats
+# (sleep 2 && conky) &
+
+# Network Manager Applet
+#sudo ip link set up wlp3s0
+#(sleep 2 && nm-applet) &
+
+# Dunst onscreen messages
+#(sleep 2 && dunst) &
+
+# Panel
+(sleep 2 && tint2) &
+
+# Volume Icon
+(sleep 2 && volumeicon) &
+
+# JACK audio
+# (sleep 2 && qjackctl) &
+
+# Keyboards
+# (sleep 1 && fcitx) &
+
+# Clipboard
+(sleep 1 && clipster) &
+
+# Autokey
+(sleep 1 && autokey-gtk) &
+
+# Mount D drive
+sudo mount /dev/sdb1 ~/ext
+
+(sleep 2 && ulauncher) &
+
+# Astrill VPN
+(sleep 2 && /usr/local/Astrill/astrill) &
+
+terminator
